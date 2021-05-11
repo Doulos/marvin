@@ -1,3 +1,4 @@
-# Marvin: sample code for creating a customized Android emulator device
+# Device files for marvin and marvincar
 
-WIP, check back later :-)
+For the main project, see [https://github.com/csimmonds/marvin-local-manifest](https://github.com/csimmonds/marvin-local-manifest)
+
