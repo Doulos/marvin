@@ -74,11 +74,3 @@ ifeq (aosp_x86_64,$(TARGET_PRODUCT))
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 endif
 
-# Multidisplay stuff, cribbed from
-# build/target/product/emulator_system.mk
-#PRODUCT_ARTIFACT_PATH_REQUIREMENT_WHITELIST := \
-#    system/lib/libemulator_multidisplay_jni.so \
-#    system/lib64/libemulator_multidisplay_jni.so \
-#    system/priv-app/MultiDisplayProvider/MultiDisplayProvider.apk \
-#
-#PRODUCT_PACKAGES += MultiDisplayProvider
