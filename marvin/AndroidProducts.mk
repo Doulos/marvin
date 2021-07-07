@@ -17,4 +17,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/marvin.mk
 
 COMMON_LUNCH_CHOICES := \
-    marvin-eng
+    marvin-userdebug
