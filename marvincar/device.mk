@@ -22,6 +22,21 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, device/generic/car/common/car.mk)
 
+#    device/generic/goldfish-opengl/system/hwc2/EmuHWC2.cpp
+#    and
+#    device/google/cuttlefish/guest/hals/hwcomposer/common/hwcomposer.cpp
+#    // this guest property, hwservicemanager.external.displays,
+#    // specifies multi-display info, with comma (,) as separator
+#    // each display has the following info:
+#    //   physicalId,width,height,dpi,flags
+#    // serveral displays can be provided, e.g., following has 2 displays:
+#    // setprop hwservicemanager.external.displays 1,1200,800,120,0,2,1200,800,120,0
+#    Note: 'flags' is not used in Goldfish
+PRODUCT_PRODUCT_PROPERTIES += \
+    hwservicemanager.external.displays=1,1080,600,120,0
+
+PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # The system image of aosp_x86_64-userdebug is a GSI for the devices with:
