@@ -1,8 +1,0 @@
-<resources>
-    <!-- Configure display 1 as the instrument cluster  -->
-    <string-array translatable="false" name="config_occupant_display_mapping">
-        <item>displayPort=0,displayType=MAIN,occupantZoneId=0</item>
-        <item>displayPort=1,displayType=INSTRUMENT_CLUSTER,occupantZoneId=0</item>
-    </string-array>
-</resources>
-

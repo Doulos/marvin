@@ -14,10 +14,6 @@
 
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Define the host tools and libs that are parts of the SDK.
--include sdk/build/product_sdk.mk
--include development/build/product_sdk.mk
-
 PRODUCT_NAME := marvin
 PRODUCT_DEVICE := marvin
 PRODUCT_BRAND := Sirius_Cybernetics
