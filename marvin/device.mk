@@ -15,8 +15,6 @@
 # limitations under the License.
 #
 
-# This is based on device/google/cuttlefish/vsoc_x86/phone/aosp_cf.mk
-
 
 # If there are two PRODUCT_COPY_FILES rules for the same target file, the FIRST
 # ONE WINS. In the section below, we want to override some files that are copied
@@ -24,5 +22,5 @@
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/init.cutf_cvm.rc:vendor/etc/init/hw/init.cutf_cvm.rc
 
-$(call inherit-product, device/google/cuttlefish/vsoc_x86/phone/aosp_cf.mk)
+$(call inherit-product, device/google/cuttlefish/vsoc_x86_64/phone/aosp_cf.mk)
 
