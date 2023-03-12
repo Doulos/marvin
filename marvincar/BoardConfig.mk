@@ -14,9 +14,5 @@
 # limitations under the License.
 #
 
-include device/google/cuttlefish/vsoc_x86/BoardConfig.mk
-
-# From device/google/cuttlefish/shared/BoardConfig.mk, but not included there because
-# of an ugly filter
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/flipendo
+include device/generic/car/emulator_car_x86_64/BoardConfig.mk
 

@@ -15,18 +15,4 @@
 # limitations under the License.
 #
 
-# This is based on device/google/cuttlefish/vsoc_x86/auto/device.mk
-
-$(call inherit-product, device/google/cuttlefish/vsoc_x86/auto/device.mk)
-#    // Configure external displays
-#    // each display has the following info:
-#    //   physicalId,width,height,dpi,flags
-#    // serveral displays can be provided, e.g., following has 2 displays:
-#    // setprop hwservicemanager.external.displays 1,1200,800,120,0,2,1200,800,120,0
-#    Note: 'flags' is not used in Goldfish
-PRODUCT_PRODUCT_PROPERTIES += \
-    hwservicemanager.external.displays=1,1080,600,120,0,2,1200,800,120,0
-
-# Add overlay that modifies config.xml to create occupant zones and maps external displays 
-PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
