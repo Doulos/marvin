@@ -1,5 +1,3 @@
-#
-# Copyright 2013 The Android Open-Source Project
 # Copyright 2020 Chris Simmonds, chris@2net.co.uk
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,4 +13,5 @@
 # limitations under the License.
 #
 
+# Add customization for marvincar here ...
 

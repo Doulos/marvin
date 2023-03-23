@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/generic/goldfish/car/sdk_car_x86_64.mk)
+# Based on aosp_cf_x86_auto-userdebug
+$(call inherit-product, device/google/cuttlefish/vsoc_x86/auto/aosp_cf.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 PRODUCT_NAME := marvincar

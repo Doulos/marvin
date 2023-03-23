@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-include device/generic/car/emulator_car_x86_64/BoardConfig.mk
+include device/google/cuttlefish/vsoc_x86/BoardConfig.mk
 
