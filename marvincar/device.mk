@@ -13,8 +13,11 @@
 # limitations under the License.
 #
 
-# Install vendor init rc
+# Add PRODUCT_COPY_FILES for marvincar that override the default here ...
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/init.cutf_cvm.rc:vendor/etc/init/hw/init.cutf_cvm.rc
 
-# Add customization for marvincar here ...
+# marvincar is based on aosp_cf_x86_auto-userdebug
+$(call inherit-product, device/google/cuttlefish/vsoc_x86/auto/aosp_cf.mk)
+
+# Add all other customization for marvincar here ...
 
