@@ -13,5 +13,8 @@
 # limitations under the License.
 #
 
+# Install vendor init rc
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/init.cutf_cvm.rc:vendor/etc/init/hw/init.cutf_cvm.rc
+
 # Add customization for marvincar here ...
 
