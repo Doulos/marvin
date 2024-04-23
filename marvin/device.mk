@@ -15,61 +15,17 @@
 # limitations under the License.
 #
 
-# This is based on build/target/product/aosp_x86_64.mk
+# This PRODUCT_COPY_FILES must come before we inherit the aosp_cf.mk below.
 
-# If there are two PRODUCT_COPY_FILES rules for the same target file, the FIRST
-# ONE WINS. In the section below, we want to override some files that are copied
-# in emulator_vendor.mk so this MUST come before we inherit that file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.ranchu.rc:vendor/etc/init/hw/init.ranchu.rc \
+		      $(LOCAL_PATH)/init.cutf_cvm.rc:vendor/etc/init/hw/init.cutf_cvm.rc
 
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# The system image of aosp_x86_64-userdebug is a GSI for the devices with:
-# - x86 64 bits user space
-# - 64 bits binder interface
-# - system-as-root
-# - VNDK enforcement
-# - compatible property override enabled
+# Include the Phone profile for Cuttlefish x86_64.
 
-# This is a build configuration for a full-featured build of the
-# Open-Source part of the tree. It's geared toward a US-centric
-# build quite specifically for the emulator, and might not be
-# entirely appropriate to inherit from for on-device configurations.
+$(call inherit-product, device/google/cuttlefish/vsoc_x86_64/phone/aosp_cf.mk)
 
-#
-# All components inherited here go to system image
-#
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/mainline_system.mk)
 
-# Enable mainline checking for excat this product name
-ifeq (aosp_x86_64,$(TARGET_PRODUCT))
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
-endif
+# Add all other customization for marvin here ...
 
-#
-# All components inherited here go to system_ext image
-#
-$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
-
-#
-# All components inherited here go to product image
-#
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
-
-#
-# All components inherited here go to vendor image
-#
-$(call inherit-product-if-exists, device/generic/goldfish/x86_64-vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86_64/device.mk)
-
-#
-# Special settings for GSI releasing
-#
-ifeq (aosp_x86_64,$(TARGET_PRODUCT))
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
-endif
 
