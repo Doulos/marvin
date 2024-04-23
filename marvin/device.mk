@@ -22,7 +22,6 @@
 # in emulator_vendor.mk so this MUST come before we inherit that file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.ranchu.rc:vendor/etc/init/hw/init.ranchu.rc \
-    $(LOCAL_PATH)/config.ini:config.ini
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
